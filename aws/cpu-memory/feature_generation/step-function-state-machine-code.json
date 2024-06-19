@@ -3,7 +3,7 @@
   "States": {
     "OrcheStrator": {
       "Type": "Task",
-      "Resource": "[ORCHESTRATOR-FUNCTION-ARN]",
+      "Resource": "arn:aws:lambda:ap-south-1:381491828137:function:Serverless",
       "ResultPath": "$.num_of_file",
       "Next": "Wait X Seconds"
     },
@@ -14,7 +14,7 @@
     },
     "Get Job Status": {
       "Type": "Task",
-      "Resource": "[GET-JOB-STATUS-FUNTION-ARN]",
+      "Resource": "arn:aws:lambda:ap-south-1:381491828137:function:Serverless",
       "Next": "Job Complete?",
       "InputPath": "$.num_of_file",
       "ResultPath": "$"
@@ -28,16 +28,16 @@
           "Next": "Wait X Seconds"
         },
         {
-           "Variable": "$.status",
-           "StringEquals": "SUCCEEDED",
-           "Next": "Feature Reducer"
+          "Variable": "$.status",
+          "StringEquals": "SUCCEEDED",
+          "Next": "Feature Reducer"
         }
       ],
       "Default": "Wait X Seconds"
     },
     "Feature Reducer": {
       "Type": "Task",
-      "Resource": "[FEATURE-REDUCER-FUNCTION-ARN]",
+      "Resource": "arn:aws:lambda:ap-south-1:381491828137:function:Serverless",
       "End": true
     }
   }
