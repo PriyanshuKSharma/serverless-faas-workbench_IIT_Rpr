@@ -1,0 +1,16 @@
+{
+    "name": "serverless-faas-workbench_IIT_Rpr",
+    "version": "1.0.0",
+    "description": "Serverless FaaS Workbench for IIT Ropar",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+      "serverless": "^2.51.1",
+      "aws-sdk": "^2.814.0"
+    }
+  }
+  
